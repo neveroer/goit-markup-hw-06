@@ -333,16 +333,17 @@
           <!-- Форма подписки на рассылку -->
           <div class="subscribe-form">
             <b class="footer-call">Подпишитесь на рассылку</b>
-            <div class="subscribe-flex">
-              <input class="email" type="email" />
-              <a class="button button-footer" href="#"><span class="subscribe">Подписаться</span> <svg class="subscribe-svg"
-                  width="24" height="24">
-                  <use href="./images/sprite.svg#icon-send"></use>
-                </svg></a>
-            </div>
+            <form>
+              <div class="subscribe-flex">
+                <input type="email" name="email" class="email" placeholder="E-mail" />
+                <button type="submit" class="button button-footer"><span class="subscribe">Подписаться</span><svg
+                    class="subscribe-svg" width="24" height="24">
+                    <use href="./images/sprite.svg#icon-send"></use>
+                  </svg></button>
+              </div>
+            </form>
           </div>
     </footer>
-    
     </body>
     
     </html>

@@ -63,7 +63,38 @@
             Эффективные решения <br />
             для вашего бизнеса
           </h1>
-          <a class="button" href="">Заказать услугу</a>
+          <button data-modal-open type="submit" class="button"><span>Заказать услугу</span></button>
+          <!-- Модальное окно -->
+          <div data-modal class="backdrop is-hidden">
+            <div class="modal">
+             <button data-modal-close>close</button>
+              <b class="modal-name">Оставьте свои данные, мы вам перезвоним</b>
+              <form>
+                <div class="input">
+                <label for="name">Имя</label>
+                <input class="input-type" type="text" id="name" class="input-">
+              </div>
+                <div class="input">
+                <label for="phone">Телефон</label>
+                <input class="input-type" type="tel" id="phone">
+              </div>
+                <div class="input">
+                <label for="mail">Почта</label>
+                <input class="input-type" type="email" id="mail">
+              </div>
+              <div class="input">
+                <textarea class="input-type" name="commebt" id="" cols="30" rows="10" placeholder="Комментарий"></textarea>
+              </div>
+                <div class="input">
+                <input type="checkbox" value="agreement">
+                <label for="">Соглашаюсь с рассылкой и принимаю <a href="#">Условия договора</a></label>
+              </div>
+                <div>
+                <button class="button"><span class="subscribe">Отправить</span></button>
+              </div>
+              </form>
+            </div>
+          </div>
         </div>
       </section>
       <!-- Преимущества -->
@@ -442,6 +473,6 @@
           </form>
         </div>
   </footer>
+<script src="./js/modal.js"></script>
   </body>
-  
   </html>

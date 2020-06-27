@@ -571,7 +571,9 @@ footer {
 
 .button-footer:focus,
 .button-footer:hover {
-  fill: var(--accent-color);
+  fill: var(--accent-color), color var(--duration) var(--timing),
+    border-color var(--duration) var(--timing),
+    background-color var(--duration) var(--timing);
 }
 
 .subscribe {
@@ -744,7 +746,7 @@ footer {
 .project-link:hover .project-description,
 .project-link:focus .project-description {
   opacity: 1;
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform var(--timing) var(--duration);
 }
 
 /* Модальное окно */
@@ -759,7 +761,7 @@ footer {
   z-index: 4;
 
   opacity: 1;
-  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: opacity var(--timing) var(--duration);
 }
 
 .modal {
@@ -781,7 +783,7 @@ footer {
     0px 1px 3px rgba(0, 0, 0, 0.12);
 
   transform: translate(-50%, -50%) scale(1);
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform var(--timing) var(--duration);
 }
 
 .modal-name {

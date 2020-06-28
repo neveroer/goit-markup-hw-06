@@ -96,13 +96,14 @@ img {
 
   border-radius: 2px;
   background-color: var(--accent-color);
+
+  transition: transform var(--duration) var(--timing),
+    opacity var(--duration) var(--timing);
 }
 
 .nav-hover::after {
   opacity: 0;
   transform: scaleX(0);
-  transition: opacity var(--duration) var(--timing),
-    transform var(--duration) var(--timing);
 }
 
 .nav-hover:hover::after {
@@ -225,7 +226,8 @@ img {
   fill: var(--primary-text-color);
   font-style: normal;
 
-  transition: fill var(--duration) var(--timing);
+  transition: fill var(--duration) var(--timing),
+    color var(--duration) var(--timing);
 }
 
 .address-link:hover,
@@ -256,6 +258,7 @@ img {
 
   text-align: center;
 }
+
 .hero-title {
   margin-bottom: 30px;
 
@@ -276,9 +279,11 @@ img {
 .benefits-list {
   display: flex;
 }
+
 .benefits-item {
   width: calc((100% - 90px) / 4);
 }
+
 .benefits-item:not(:last-child) {
   margin-right: 30px;
 }
@@ -335,7 +340,6 @@ img {
   line-height: 1.14;
   font-size: 14px;
   color: var(--third-text-color);
-
   background-color: rgba(47, 48, 58, 0.8);
 }
 
@@ -566,14 +570,15 @@ footer {
   align-items: center;
   fill: var(--third-text-color);
 
-  transition: fill var(--duration) var(--timing);
+  transition: fill var(--duration) var(--timing),
+    color var(--duration) var(--timing),
+    border-color var(--duration) var(--timing),
+    background-color var(--duration) var(--timing);
 }
 
 .button-footer:focus,
 .button-footer:hover {
-  fill: var(--accent-color), color var(--duration) var(--timing),
-    border-color var(--duration) var(--timing),
-    background-color var(--duration) var(--timing);
+  fill: var(--accent-color);
 }
 
 .subscribe {
@@ -704,6 +709,9 @@ footer {
   width: 100%;
   height: 100%;
   opacity: 0;
+
+  transition: transform var(--timing) var(--duration);
+  transition: opacity var(--timing) var(--duration);
 }
 
 .project-description {
@@ -724,8 +732,8 @@ footer {
 
   transform: translateY(100%);
   opacity: 0;
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform var(--duration) var(--timing),
+    opacity var(--duration) var(--timing));
 }
 
 .project-link:hover .project-overlay {
@@ -735,6 +743,8 @@ footer {
 
 .project-link {
   transition: transform var(--duration) var(--timing);
+  transition: opacity var(--timing) var(--duration);
+  transition: box-shadow var(--timing) var(--duration);
 }
 
 .project-link:hover,
@@ -746,7 +756,6 @@ footer {
 .project-link:hover .project-description,
 .project-link:focus .project-description {
   opacity: 1;
-  transition: transform var(--timing) var(--duration);
 }
 
 /* Модальное окно */

@@ -862,11 +862,11 @@ footer {
 
 .modal-input:focus-within > .input-label,
 .input-field:not(:placeholder-shown) + .input-label {
-  transform: translate(-16px, -47px);
+  transform: translate(-19px, -47px);
   color: var(--accent-color);
 }
 
-.modal-input:focus-within ~ .modal-icon {
+.modal-input:focus-within > .input-icon {
   fill: var(--accent-color);
 }
 

@@ -551,6 +551,9 @@ footer {
   border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 4px;
   background-color: var(--footer-background-color);
+  color: var(--icons-color);
+  font-size: 16px;
+  line-height: 1.25;
 }
 
 .email::placeholder {
@@ -733,7 +736,7 @@ footer {
   transform: translateY(100%);
   opacity: 0;
   transition: transform var(--duration) var(--timing),
-    opacity var(--duration) var(--timing));
+    opacity var(--duration) var(--timing);
 }
 
 .project-link:hover .project-overlay {
@@ -795,6 +798,15 @@ footer {
   transition: transform var(--timing) var(--duration);
 }
 
+.backdrop.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.backdrop.is-hidden .modal {
+  transform: translate(-50%, -50%) scale(0.5);
+}
+
 .modal-name {
   display: block;
   margin-bottom: 30px;
@@ -805,28 +817,66 @@ footer {
   color: var(--secondary-text-color);
 }
 
-.input {
+.modal-input {
+  position: relative;
+
+  display: block;
   margin-bottom: 30px;
 }
 
-.input-type {
-  padding-left: 16px;
+.input-field {
+  padding-left: 42px;
   padding-top: 12px;
-  padding-right: 12px;
+  padding-bottom: 12px;
   width: 100%;
   resize: none;
 
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
+
+  transition: box-shadow var(--timing) var(--duration);
 }
 
-.backdrop.is-hidden {
-  opacity: 0;
-  pointer-events: none;
+.input-label {
+  position: absolute;
+  top: 50%;
+  left: 42px;
+  transform: translateY(-50%);
+
+  letter-spacing: 0.01em;
+
+  transition: transform var(--timing) var(--duration),
+    color var(--timing) var(--duration);
 }
 
-.backdrop.is-hidden .modal {
-  transform: translate(-50%, -50%) scale(2);
+.modal-icon {
+  position: absolute;
+  top: 50%;
+  left: 16px;
+  transform: translateY(-50%);
+}
+
+.modal-input:focus-within + .input-field {
+  border-color: var(--accent-color);
+}
+
+.modal-input:focus-within > .input-label,
+.input-field:not(:placeholder-shown) + .input-label {
+  transform: translate(-16px, -47px);
+  color: var(--accent-color);
+}
+
+.modal-input:focus-within ~ .modal-icon {
+  fill: var(--accent-color);
+}
+
+.textarea {
+  margin-bottom: 30px;
+  padding-left: 16px;
+}
+
+.textarea::placeholder {
+  letter-spacing: 0.01em;
 }
 
 .modal-button {
@@ -838,7 +888,7 @@ footer {
   position: absolute;
   bottom: 100%;
   left: 100%;
-  transform: translate(-120%, 120%);
+  transform: translate(-130%, 130%);
 
   background-color: var(--primary-background-color);
   fill: var(--logo-color);
@@ -857,4 +907,8 @@ footer {
 
 .rules {
   color: (var(--accent-color));
+}
+
+.rules:visited {
+  color: var(--accent-color);
 }

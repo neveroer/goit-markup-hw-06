@@ -854,9 +854,12 @@ footer {
   top: 50%;
   left: 16px;
   transform: translateY(-50%);
+
+  transition: fill var(--timing) var(--duration);
 }
 
-.modal-input:focus-within + .input-field {
+.modal-input:focus-within > .input-field {
+  outline: none;
   border-color: var(--accent-color);
 }
 

@@ -834,7 +834,7 @@ footer {
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
 
-  transition: box-shadow var(--timing) var(--duration);
+  transition: border-color var(--timing) var(--duration);
 }
 
 .input-label {
@@ -876,6 +876,13 @@ footer {
 .textarea {
   margin-bottom: 30px;
   padding-left: 16px;
+
+  transition: border-color var(--timing) var(--duration);
+}
+
+.textarea:focus {
+  outline: none;
+  border-color: var(--accent-color);
 }
 
 .textarea::placeholder {
@@ -908,10 +915,42 @@ footer {
   fill: var(--accent-color);
 }
 
-.rules {
-  color: (var(--accent-color));
-}
-
+.rules,
 .rules:visited {
   color: var(--accent-color);
+}
+
+.checkbox-field {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.checkbox {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.agree {
+  display: inline-block;
+  margin-right: 8px;
+  width: 15px;
+  height: 15px;
+
+  border: 2px solid #212121;
+  border-radius: 2px;
+}
+
+.checkbox:checked + .agree {
+  border-color: transparent;
+  background-color: var(--accent-color);
+  background-image: url(../images/check.svg);
+  background-size: contain;
+  background-origin: border-box;
 }

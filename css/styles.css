@@ -846,8 +846,7 @@ footer {
   letter-spacing: 0.01em;
 
   transition: transform var(--timing) var(--duration),
-    color var(--timing) var(--duration),
-    font-size: var(--timing) var(--duration);
+    color var(--timing) var(--duration);
 }
 
 .modal-icon {

@@ -846,7 +846,8 @@ footer {
   letter-spacing: 0.01em;
 
   transition: transform var(--timing) var(--duration),
-    color var(--timing) var(--duration);
+    color var(--timing) var(--duration),
+    font-size: var(--timing) var(--duration);
 }
 
 .modal-icon {
@@ -865,7 +866,9 @@ footer {
 
 .modal-input:focus-within > .input-label,
 .input-field:not(:placeholder-shown) + .input-label {
-  transform: translate(-25px, -47px);
+  transform: translate(-25px, -35px);
+  font-size: 12px;
+  line-height: 1.17px;
   color: var(--accent-color);
 }
 
